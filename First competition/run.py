@@ -22,7 +22,7 @@ def main(argv):
     time.sleep(10)
 
     # Set stop time
-    stop_time = dt.time(15, 30, 33) # todo delete
+    stop_time = dt.time(15, 30, 33)
 
     # Buy at the first time
     while True:
