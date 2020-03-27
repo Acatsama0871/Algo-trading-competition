@@ -10,11 +10,11 @@ import Stationary
 
 def main(argv):
     # create trader object
-    trader = shift.Trader("test002")
+    trader = shift.Trader("acatsama")
 
     # connect and subscribe to all available order books
     try:
-        trader.connect("initiator.cfg", "password")
+        trader.connect("initiator.cfg", "cLbWKQzpWb9235NC")
         trader.sub_all_order_book()
     except shift.IncorrectPasswordError as e:
         print(e)
