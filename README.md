@@ -1,2 +1,2 @@
-# Algo-trading-competition
-Team name: Acatsama, SCATC spring 2020
+# Team name: Acatsama, please use code in Competion Code folder
+SCATC spring 2020, 
