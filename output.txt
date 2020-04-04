@@ -1,0 +1,6 @@
+[[32;1;1mINFO[0m] Connection established.
+/home/myteam/miniconda/envs/shift/lib/python3.7/site-packages/statsmodels/regression/linear_model.py:889: RuntimeWarning: divide by zero encountered in log
+  llf = -nobs2*np.log(2*np.pi) - nobs2*np.log(ssr / nobs) - nobs2
+/home/myteam/miniconda/envs/shift/lib/python3.7/site-packages/statsmodels/base/model.py:1362: RuntimeWarning: invalid value encountered in true_divide
+  return self.params / self.bse
+[[32;1;1mINFO[0m] Disconnected.
