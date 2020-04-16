@@ -22,7 +22,7 @@ def main(argv):
         print(e)
 
     # Wait market open
-    time.sleep(300)
+    time.sleep(444)
 
     # Set parameters
     observing_symbols = ["MSFT", "MMM", "AAPL", "INTC"]
