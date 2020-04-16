@@ -25,15 +25,15 @@ def main(argv):
     time.sleep(300)
 
     # Set parameters
-    observing_symbols = ["KO", "MMM", "PFE", "MCD", "JNJ", "INTC"]
+    observing_symbols = ["MSFT", "MMM", "AAPL", "INTC"]
     observing_delay = 4
-    observing_num = 10
+    observing_num = 20 # extended
     significance_level = 0.1
-    stationary_maintain = dt.timedelta(seconds=15)
+    stationary_maintain = dt.timedelta(seconds=5) # reduced
     sd_width_1 = 1
     sd_width_2 = 7
     tolerance_level = 0.05
-    buy_sell_timeDelta = 0.5
+    buy_sell_timeDelta = 1 # extended
     sell_buy_shares = 1
 
     stop_time = dt.time(15, 30, 44)
