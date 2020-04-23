@@ -22,23 +22,40 @@ def main(argv):
         print(e)
 
     # Wait market open
-    time.sleep(444)
+    time.sleep(888)
 
     # Set parameters
-    observing_symbols = ["MSFT", "MMM", "AAPL", "INTC"]
+    observing_symbols = ["CS1", "CS2"]
     observing_delay = 4
-    observing_num = 20 # extended
+    observing_num = 10  # previous: 20
     significance_level = 0.1
-    stationary_maintain = dt.timedelta(seconds=5) # reduced
+    stationary_maintain = dt.timedelta(seconds=10)  # previous:5
     sd_width_1 = 1
     sd_width_2 = 7
     tolerance_level = 0.05
-    buy_sell_timeDelta = 1 # extended
+    buy_sell_timeDelta = 0.5  # previous:1
     sell_buy_shares = 1
+    stop_time = dt.time(15, 15, 15)
+    # safety
+    safety = True
+    safety_symbol = "CS1"
 
-    stop_time = dt.time(15, 30, 44)
+
+
+    # safety
+    if safety:
+        counter = 40
+        for i in range(counter):
+            # Sell
+            safety_order = shift.Order(shift.Order.Type.MARKET_SELL, safety_symbol, 1)
+            trader.submit_order(safety_order)
+            time.sleep(1)
+            # Buy
+            counter_safety_order = shift.Order(shift.Order.Type.MARKET_BUY, safety_symbol, 1)
+            trader.submit_order(counter_safety_order)
+
+    # Strategy begin
     current_time = trader.get_last_trade_time().time()
-
     while current_time <= stop_time:
 
         observing_symbols = np.array(observing_symbols)
@@ -104,6 +121,8 @@ def main(argv):
 
 
     # disconnect
+    print("\n Final: ")
+    shift_u.show_portfolio(trader)
     trader.disconnect()
 
     return
